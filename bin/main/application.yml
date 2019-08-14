@@ -1,0 +1,19 @@
+spring.data.mongodb.host: localhost
+spring.data.mongodb.port: 27017
+spring.data.mongodb.database: studentInfo
+
+spring.cache.type: redis
+spring.redis.host: localhost
+spring.redis.port: 6379
+#spring.data.redis.repositories.enabled=true
+#spring.redis.password= 
+
+#spring.redis.lettuce.pool.max-active=7 
+#spri#ng.redis.lettuce.pool.max-idle=7
+#spr#ing.redis.lettuce.pool.min-idle=2
+#sp#ring.redis.lettuce.pool.max-wait=-1ms
+#s#pring.redis.lettuce.shutdown-timeout=200ms
+
+#spring.cache.redis.cache-null-values=false
+#spring.cache.redis.time-to-live=600000
+#spring.cache.redis.use-key-prefix=true
