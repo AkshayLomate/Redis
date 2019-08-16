@@ -16,7 +16,12 @@ import lombok.NoArgsConstructor;
 @Document(collection = "studentInfo")
 public class Students implements Serializable {
 
-	private static final long serialVersionUID = -5580209661043007039L;
+	
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private String id;
 

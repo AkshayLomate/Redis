@@ -18,20 +18,26 @@ import org.springframework.web.bind.annotation.RestController;
 public class SampleController {
 
 	@Autowired
-	 StudentsRepository studentInfoRepository;
+	private StudentsRepository studentsRepository;
+	
+	
 
-	@CacheEvict(value= "allArticlesCache", allEntries= true)
-	//@Cacheable(value = "studentInformation", key = "#name")
+	//@CacheEvict(value= "studentInformation", allEntries= true)
+	//@Cacheable(value = "result", key="#name")
+	//@CacheEvict(value= "studentInformation", allEntries= true)
 	@RequestMapping(value = "/test", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public Students sampleController(@RequestParam(value = "name") String name) {
+	public Students sampleController() {//(@RequestParam(value = "name" ,required = true) String name) {
 
-		Students students = Students.builder().id("12345").name(name).address("pune").marks(76).build();
-
-		Students result = studentInfoRepository.save(students);
+		Students result = studentsRepository.addStudents();
+		System.out.println("djsagdjs");
+		//return new ResponseEntity<Students>(result,HttpStatus.OK);
+		
 		return result;
 	}
+	
 	/**
-	 * reference link:https://www.concretepage.com/spring-boot/spring-boot-redis-cache
-	 */
+	 * reference link : https://www.concretepage.com/spring-boot/spring-boot-redis-cache
+	 *
+	 **/
 
 }
